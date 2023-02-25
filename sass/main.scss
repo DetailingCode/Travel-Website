@@ -1,6 +1,6 @@
-@use "./colors";
-@use "./mixins";
-@use "./components";
+@import "./colors";
+@import "./mixins";
+@import "./components";
 
 *,
 *::before,
@@ -10,12 +10,189 @@
 	padding: 0;
 }
 
-html{
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
-body{
-    font-family: 'Open sans', sans-serif;
-    font-size: 1.6rem;
+body {
+	font-family: "Open sans", sans-serif;
+	font-size: 1.6rem;
+}
+
+// BURGEN MENU
+
+.burger-btn {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 1000;
+
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+
+	&:focus {
+		outline: none;
+		border-radius: 8px;
+		border: 1px solid rgba(255, 255, 255, 0.5);
+	}
+
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		@include burgerBtn;
+	}
+	&__bars {
+		width: 100%;
+
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+		&::before {
+			top: 27px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
+	}
+}
+
+
+// NAV SECTION
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-image: $blue-gradient-solid;
+	z-index: 100;
+	transform: translateX(100%);
+	transition: .5s cubic-bezier(0.65,0.05,0.36,1);
+
+	&--active{
+		transform: translateX(0);
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		padding: 0.5em 2em;
+		margin: 0.5em 0;
+		color: $pure-white;
+		text-transform: uppercase;
+		font-size: 2rem;
+		text-decoration: none;
+		text-align: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			background-color: $pure-white;
+			transform: scaleY(0);
+			transition: transform 0.4s;
+		}
+
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+
+// HEADER
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 75vh;
+	text-align: center;
+	color: $pure-white;
+	@include heroImages("../img/palm_640.jpg");
+	background-attachment: scroll;
+
+	&__heading {
+		font-size: 4.8rem;
+		font-family: "Dancing Script", cursive;
+		font-weight: 300;
+	}
+	&__text {
+		font-size: 1.4rem;
+	}
+	&__btn {
+		margin-top: 2em;
+		padding: 0.8em 1.6em;
+		background: $pure-white;
+		font-size: 1.4rem;
+		border: none;
+		border-radius: 8px;
+		color: $dark;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&::before {
+			background-color: orange;
+		}
+	}
+}
+
+// =====================
+// MEDIA QUERIES
+// =====================
+
+@media (min-width: 768px) {
+	.white-block {
+		height: 50px;
+		width: 45%;
+	}
+	.header {
+		&__heading {
+			font-size: 6.5rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		top: 50px;
+		right: 50px;
+	}
+	.header {
+		background-image: $blue-gradient, url("../img/palm_640.jpg");
+		&__heading {
+			font-size: 9rem;
+		}
+	}
 }
