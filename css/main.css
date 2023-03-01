@@ -380,6 +380,8 @@ body {
 }
 .offers__option-info {
   padding: 2em;
+  background-color: #fff;
+  z-index: 11;
 }
 .offers__option-heading {
   margin-bottom: 0.5em;
