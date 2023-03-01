@@ -45,6 +45,20 @@
   transform-origin: left;
 }
 
+.section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  color: #1755e7;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
 *,
 *::before,
 *::after {
@@ -202,20 +216,6 @@ body {
   background-color: orange;
 }
 
-.section-heading {
-  position: relative;
-  margin-bottom: 2em;
-  font-size: 3rem;
-  font-weight: 300;
-  text-align: center;
-  color: #1755e7;
-  letter-spacing: 2px;
-}
-
-.section-padding {
-  padding: 6em 2em;
-}
-
 .dreams__box {
   display: flex;
   flex-direction: column;
@@ -278,6 +278,10 @@ body {
   border-radius: 8px;
   background-size: cover;
   transition: transform 1s, opacity 1s;
+}
+.islands__card-img-photo {
+  width: auto;
+  height: 320px;
 }
 .islands__card-img--first {
   background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url("../img/card-island1_640.jpg");

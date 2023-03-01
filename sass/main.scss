@@ -176,18 +176,7 @@ body {
 
 // ========== MAIN -> DREAMS SECTION ============
 
-.section-heading {
-	position: relative;
-	margin-bottom: 2em;
-	font-size: 3rem;
-	font-weight: 300;
-	text-align: center;
-	color: $main-color;
-	letter-spacing: 2px;
-}
-.section-padding {
-	padding: 6em 2em;
-}
+
 
 .dreams {
 	&__box {
@@ -263,6 +252,11 @@ body {
 			// ANIMUJEMY DWIE WŁAŚCIOWOŚCI Z HOVERA \/ ->
 			transition: transform 1s, opacity 1s;
 			// ANIMUJEMY DWIE WŁAŚCIOWOŚCI Z HOVERA \/ ->
+
+		&-photo{
+			width: auto;
+			height: 320px;
+		}	
 
 			&--first {
 				background-image: $light-blue-gradient,
