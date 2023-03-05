@@ -20,6 +20,11 @@ body {
 	font-size: 1.6rem;
 }
 
+
+
+
+
+
 // BURGEN MENU
 
 .burger-btn {
@@ -132,6 +137,15 @@ body {
 .nav-items-animation {
 	animation: navAnimation 1s both;
 }
+
+// ----------- burger black js ------------------
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before{
+	background-color: $dark;
+}
+
 
 // HEADER
 
